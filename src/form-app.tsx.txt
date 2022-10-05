@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 // import './App.css';
-// textarea
 
 function App() {
-  const [inputValue, setInputValue] = useState("Please write an essay about your favorite DOM element.");
+  const [inputValue, setInputValue] = useState("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    alert('An essay was submitted: ' + inputValue);
+    alert('A name was submitted: ' + inputValue);
+    console.log(inputValue);
+    setInputValue("");
     e.preventDefault();
   }
 
@@ -18,8 +19,8 @@ function App() {
     <div className="App">
       <form onSubmit={(e) => handleSubmit(e)}>
         <label>
-          Essay:
-          <textarea
+          Name:
+          <input type="text"
             value={inputValue}
             onChange={(e) => handleChange(e)} />
         </label>
