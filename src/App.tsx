@@ -21,7 +21,6 @@ function App() {
         <label>
           Name:
           <input type="text"
-            // value={this.state.value}
             value={inputValue}
             onChange={(e) => handleChange(e)} />
         </label>
