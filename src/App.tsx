@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import './App.css';
+import './App.css';
 // textarea
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    alert('An essay was submitted: ' + inputValue);
+    alert("An essay was submitted: " + inputValue);
     e.preventDefault();
   }
 
@@ -19,7 +19,7 @@ function App() {
       <form onSubmit={(e) => handleSubmit(e)}>
         <label>
           Essay:
-          <textarea
+          <textarea className="textarea"
             value={inputValue}
             onChange={(e) => handleChange(e)} />
         </label>
