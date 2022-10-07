@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+// const {useState} = React;
 import './App.css';
-// textarea
+// select タグの処理
 
 function App() {
   const [inputValue, setInputValue] = useState("Please write an essay about your favorite DOM element.");
