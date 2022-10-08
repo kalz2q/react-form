@@ -4,16 +4,16 @@ const { useState } = React;
 // select タグの処理
 
 function App() {
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState({ value: "coconut" });
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setInputValue(e.target.value);
+    setInputValue({ value: e.target.value });
     // setInputValue(["mango", "lime"]);
-    // console.log(e.target.value);
+    console.log(e.target.value);
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    alert("Your favorite flavor is: " + inputValue);
+    // alert("Your favorite flavor is: " + inputValue.value);
     // console.log(e.target.value);
     e.preventDefault();
   }
@@ -23,7 +23,7 @@ function App() {
       <form onSubmit={(e) => handleSubmit(e)}>
         <label>
           Pick your favorite flavor:<p></p>
-          <select value={inputValue} onChange={(e) => handleChange}>
+          <select value={inputValue.value} onChange={(e) => handleChange(e)}>
             <option value="grapefruit">Grapefruit</option>
             <option value="lime">Lime</option>
             <option value="coconut">Coconut</option>
