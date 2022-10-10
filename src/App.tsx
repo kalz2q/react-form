@@ -3,7 +3,8 @@ import './App.css';
 const { useState } = React;
 
 function App() {
-  const [inputs, setInputs] = useState({});
+  // const [inputs, setInputs] = useState({});
+  const [inputs, setInputs] = useState<{ username: string, age: number }>({ username: "", age: 0 });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const name = e.target.name;
@@ -13,20 +14,21 @@ function App() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    alert(inputs)
+    console.log(inputs)
   }
   return (
     <div className="App">
       <form onSubmit={(e) => handleSubmit(e)}>
         <label>Enter your name:
+          <p></p>
           <input
             type="text"
             name="username"
             value={inputs.username || ""}
             onChange={(e) => handleChange(e)}
           />
-        </label>
-        <label>Enter your age:
+        </label>          <p></p>
+        <label>Enter your age:          <p></p>
           <input
             type="number"
             name="age"
@@ -34,6 +36,7 @@ function App() {
             onChange={handleChange}
           />
         </label>
+        <p></p>
         <input type="submit" />
       </form>
     </div >
