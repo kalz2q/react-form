@@ -3,6 +3,7 @@ import './App.css';
 const { useState } = React;
 
 function App() {
+  // const [inputs, setInputs] = useState({});
   const [inputs, setInputs] = useState<{ username: string, age: number }>({ username: "", age: 0 });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
