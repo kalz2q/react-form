@@ -10,8 +10,7 @@ function App() {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const name = e.target.name;
     const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
-    // setInputValue(values => ({ ...values, [name]: value }))
-    setInputValue(values => ({...values, [name]: value }))
+    setInputValue(values => ({ ...values, [name]: value }))
 
   }
 
