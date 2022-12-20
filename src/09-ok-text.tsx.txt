@@ -10,7 +10,7 @@ function App() {
   const handleInputChange = (e: any) => {
     setInputValue(e.target.value)
   }
-  
+
   return (
     <div className="App">
       <h2>テキストフィールド</h2>
